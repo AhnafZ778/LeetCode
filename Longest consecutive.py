@@ -13,6 +13,5 @@ class Solution:
                 length = 1
                 while (i + length) in num:
                     length += 1
-            if length > maxi:
-                maxi = length
+                maxi = max(length,maxi)
         return maxi
