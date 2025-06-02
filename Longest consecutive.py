@@ -8,7 +8,7 @@ class Solution:
     def longestConsecutive(self, nums: List[int]) -> int:
         num = set(nums)
         maxi = 0
-        for i in nums:
+        for i in num:
             if i-1 not in num:
                 length = 1
                 while (i + length) in num:
