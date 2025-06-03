@@ -13,4 +13,8 @@ class Solution:
                     return False
             else:
                 stack.append(i)
-        return True
+## didn't check but it's supposed to be empty to return True....
+        if stack:
+            return False
+        else:
+            return True
