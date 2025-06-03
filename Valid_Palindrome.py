@@ -34,3 +34,23 @@ class Solution:
                 return False
             count += 1
         return True
+
+## Okay this is just another version which is the optimal method but not really but it is the conventional way called two pointers, mine works exactly the same but might not be good for 
+## a shared code so i'll change it to two pointers
+
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        store = []
+        for i in s:
+            if "A" <= i <= "Z" or "a" <= i <= "z":
+                store += i.lower()
+            elif "0" <= i <= "9":
+                store += i
+        store = "".join(store)
+        left, right = 0, len(store)-1
+        while left < right:
+            if store[left] != store[right]:
+                return False
+            left += 1
+            right -= 1
+        return True
