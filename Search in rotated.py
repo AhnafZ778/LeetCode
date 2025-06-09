@@ -20,7 +20,7 @@ class Solution:
                 return m
             
             if nums[m] >= nums[l]:
-                if nums[l] > target or target > nums[mid]:
+                if nums[l] > target or target > nums[m]:
                     l = m + 1
                 else:
                     r = m - 1
