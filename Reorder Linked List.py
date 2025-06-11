@@ -51,3 +51,35 @@ class Solution:
         if prev:
             temp.next = prev
         return
+## Okay so I could use a fast and slow pointer to find middle as well
+## intitially I was unable to figure why but basically as long as the 
+## loop continues the fast pointer covers twice as much ground as the slow
+## does, so by the time slow will reach the middle the fast will have reached 
+## the end and that's a clean way of finding it in one go instead of having to 
+## rely on count like I did
+
+## Also the merge segment can be done with a singular while loop 
+## as I am considering the second half of the linked list to be 
+## bigger than the first half which means I have to travel the second half only
+
+class Solution:
+    def reorderList(self, head: Optional[ListNode]) -> None:
+        slow, fast = head, head
+        while fast and fast.next:
+            fast = fast.next.next
+            slow = slow.next
+        temp1 = slow.next
+        slow.next = None
+        prev, curr = None, temp1
+        while curr:
+            te = curr.next
+            curr.next = prev
+            prev = curr
+            curr = te
+        temp = head
+        first, second = head, prev
+        while second:
+            temp1, temp2 = first.next, second.next
+            first.next = second
+            second.next = temp1
+            first,second = temp1,temp2
