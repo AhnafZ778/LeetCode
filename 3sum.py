@@ -1,4 +1,4 @@
-## okay I know garbage code but comeon give me a break my head is not working rn anyways O(n^6)...... don't judge... first attempt 
+## first attempt 
 
 class Solution:
   def threeSum(self, nums: List[int]) -> List[List[int]]:
