@@ -1,4 +1,3 @@
-## Not the most optimal way
 
 # Definition for a binary tree node.
 # class TreeNode:
