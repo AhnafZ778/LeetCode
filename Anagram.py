@@ -12,3 +12,4 @@ class Solution:
             if d1[c] != d2.get(c, 0):
                 return False
         return True
+   
